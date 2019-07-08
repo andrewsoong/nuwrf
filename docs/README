@@ -1,0 +1,45 @@
+
+--- NU-WRF documents and references---
+
+ARWUsersGuideV3.pdf: ARW Version 3 Modeling System User's Guide, 
+    http://www2.mmm.ucar.edu/wrf/users/docs/user_guide_V3.9/contents.html
+
+WRF-Chem User Docs 
+    https://ruc.noaa.gov/wrf/wrf-chem/model_info.htm
+
+LIS 7.2 Users' Guide, August 2017 (NASA)
+    https://modelingguru.nasa.gov/docs/DOC-2634
+
+LDT 7.2 Users' Guide, May 2017 (NASA)
+    https://modelingguru.nasa.gov/docs/DOC-2635
+
+LVT 7.2 Users' Guide, May 2017 (NASA)
+    https://modelingguru.nasa.gov/docs/DOC-2636
+
+GSDSU_User_Guide_V3.5.1.pdf: User Guide: Goddard Satellite Data Simulator Unit
+			     Version 3.5.1, June 2016 (NASA)
+    https://nuwrf.gsfc.nasa.gov/sites/default/files/docs/GSDSU_User_Guide_V3.5.1.pdf
+
+MET_Users_Guide_v5.1.pdf: Model Evaluation Tools Version 5.1 User's Guide,
+   http://www.dtcenter.org/met/users/docs/users_guide/MET_Users_Guide_v5.1.pdf
+
+nuwrf_userguide_dust_dkim6_v3.pdf: A brief description of new dust source
+				   functions in NU-WRF Version 7, 
+				   July 2014 (NASA)
+    https://nuwrf.gsfc.nasa.gov/sites/default/files/docs/nuwrf_userguide_dust_dkim6_v3.pdf
+
+nuwrf_userguide.pdf: NU-WRF Version 8 User's Guide, December 2016 (NASA)
+    http://nuwrf.gsfc.nasa.gov/sites/default/files/docs/nuwrf_userguide.pdf
+
+upp_users_guide.pdf: User's Guide for the NCEP Unified Post Processor 
+    http://www.dtcenter.org/upp/users/docs/user_guide/V3/upp_users_guide.pdf
+
+UserGuide_CASA2WRF.pdf: User's Guide for CASA2WRF, December 2015 (NASA)
+    https://nuwrf.gsfc.nasa.gov/sites/default/files/docs/UserGuide_CASA2WRF.pdf
+
+UserGuide_Radiation2014.pdf:  User Guide: Goddard radiation scheme for NU-WRF
+			      Version 2014, June 2014 (NASA)
+    https://nuwrf.gsfc.nasa.gov/sites/default/files/docs/UserGuide_Radiation2014.pdf
+
+Users_guide.pdf: WRF-Chem Version 3.8.1 User's Guide, 
+    http://ruc.noaa.gov/wrf/wrf-chem/Users_guide.pdf

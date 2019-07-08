@@ -1,0 +1,9 @@
+#############################
+# BEGIN MERRA2WRF SEGMENT
+#############################
+
+cd $RUNDIR || exit 1
+
+ln -sf $NUWRFDIR/WPS/util/plotgrids_new.ncl || exit 1
+module load other/ncl
+ncl plotgrids_new.ncl

@@ -1,0 +1,11 @@
+NOAHMP MERRA2 Forcing Testcase
+
+This is a test case that uses:
+  (a) CONUS western domain (130W-100W, 20N-50N) with 1 nests (9 km)
+      Lambert projection
+  (b) Simulation time period from 00Z 16 Feb 2018 to 00Z 17 Feb 2018
+  (c) MODIS geographical data, MERRA2 meteorological data
+  (d) NoahMP-3.6 LSM with MERRA2 forcing and budget-bilinear Interpolation
+  (e) 4-day LIS spinup
+  (f) Goddard MP (4ice) and Goddard 2014 radiation (option 56)
+

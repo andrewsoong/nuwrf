@@ -1,0 +1,40 @@
+
+Default namelists and configs for WPS, LDT, LIS, and WRF
+
+WPS notes:
+* Use MODIS land use
+* Recommendation: Use GEOGRID.TBL.ARW_CHEM_NUWRF when using chemistry (adds
+  time-varying EROD).
+
+LDT notes:
+* Use MODIS (IGBPNCEP) land cover data
+* Use PRISM precip climatologiy matps
+* Use SRTM 30s terrain
+* Use deep soil temperature data with topographic downscaling
+* File is for "Pre-LIS" mode; see comments for changes for "Post-LIS" step
+
+LIS notes:
+* Use Noah 3.3 LSM
+* Use MERRA-Land met forcing
+* File is configured for off-line cold start; see comments for changes for
+  WRF-LIS coupling
+
+WRF notes:
+* Use NUWRF 2011 Goddard 3ICE microphysics with graupel
+* Use NUWRF 2011 Goddard radiation
+* Use GOCART simple aerosol scheme
+* Use aerosol-microphysics-radiation coupling
+* Use LIS for LSM
+* Use MYNN2 PBL
+* Use G3 cumulus scheme
+* Assumes MODIS land use (20 categories)
+* Use 2nd Order Diffusion on coordinate surfaces with deformation-based
+  eddy coefficients
+* Use monotonic 6th order diffusion
+* Use positive-definite 5th order advection
+* Use implicit Rayleigh damping
+* Use vertical velocity damping
+* Use 1-way nesting (no feedback)
+* Recommendation: Time off-centering coefficient (epssm) should exceed maximum
+  terrain slope in domain.
+

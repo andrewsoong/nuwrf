@@ -1,0 +1,6 @@
+NLDAS2 metforcing reader test that uses ESMF_Regrid.
+
+This test is designed as a simple LIS spinup run that reads
+NLDAS2 input forcing data and uses ESMF regridding functions
+to interpolate the data to LIS' running grid.
+

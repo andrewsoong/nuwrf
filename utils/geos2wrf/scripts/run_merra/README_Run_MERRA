@@ -1,0 +1,43 @@
+==============
+Run_MERRA.csh  
+==============
+Author: Jossy P. Jacob (September 2014)
+ASTG/CISTO/SSAI
+--------------------------------
+
+Input: Run_MERRA.csh startdate Enddate Rundir NUWRFDIR
+(Run_MERRA.csh 19900101 19900301 /discover/nobackup/jjacob/NUWRF/MERRA2 $NUWRFDIR) 
+------------------------------------------------------------------------
+set NUWRFDIR = /discover/nobackup/jjacob/NUWRF/trunk/
+You can also run as 
+./Run_MERRA.csh 19900101 19900301 . $NUWRFDIR
+------------------------------------------------------------------------
+
+Output file (MERRA:YYYY-MM-DD_HH) will be found Rundir/data/merra2wrf
+
+Make sure that you copy the merra2wrf executable into the Rundir
+Make sure that you have the code: Get_dates_daily.py in your Rundir
+
+This code will do the following. 
+1.Compute the dates between start and end date with 1 day interval
+2. Ftp one set of MERRAdata needed for merra2wrf run.
+  
+MERRA300.prod.assim.const_2d_asm_Nx.00000000.hdf
+MERRA300.prod.assim.inst6_3d_ana_Nv.20060102.hdf
+MERRA300.prod.assim.inst6_3d_ana_Np.20060102.hdf
+MERRA300.prod.assim.tavg1_2d_slv_Nx.20060102.hdf
+MERRA300.prod.assim.tavg1_2d_ocn_Nx.20060102.hdf
+
+Change the data format if you know that the format has changed. For now, the format is 
+ merraFormat_const_2d_asm_Nx = 4, (which HDFEOS2) 1=HDF4, 2=netCDF, 4=HDFEOS2
+ 
+Change the datafile names if you find that there is a change. Now the data filenames starts with
+MERRA100 (1979-1992)
+MERRA200 (1993-2000)
+MERRA300 (2001-present)
+ 
+3. Create a namelist.merra2wrf_daily with the name of the data files. 
+4. Run the merra2wrf which converts MERRA data to MET files format for use in WRF. 
+5. Delete the Original MERRA data ftp'd. 
+6. Continue to next date to process
+

@@ -1,0 +1,111 @@
+#!/bin/bash
+#
+# WARNING: If you install a new version of the Allinea tools to the same
+#          directory as this installation, then this file will be overwritten.
+#          If you customize this script at all, please rename it.
+#
+# Name: NCCS INTEL SLURM
+#
+# submit: /usr/slurm/bin/sbatch
+# display: /usr/slurm/bin/squeue
+# job regexp: (\d+)
+# cancel: /usr/slurm/bin/scancel JOB_ID_TAG
+# show num_nodes: no
+#
+
+#SBATCH --nodes=NUM_NODES_TAG
+#SBATCH --ntasks-per-node=PROCS_PER_NODE_TAG
+#SBATCH --time=WALL_CLOCK_LIMIT_TAG
+#SBATCH --job-name="wrf"
+#SBATCH --constraint=hasw
+#SBATCH --qos=high
+#SBATCH --output=allinea-%j.out
+#SBATCH --error=allinea-%j.err
+# -V
+#ulimit -c unlimited
+
+. /usr/share/modules/init/bash
+
+source /etc/bash.bashrc
+. /etc/profile.d/modules.sh
+
+module purge
+
+unset LD_LIBRARY_PATH
+
+module load comp/intel-13.0.1.117
+module load mpi/impi-5.0.2.044
+module load tool/allinea-tools-5.0.1
+
+ulimit -s unlimited
+
+# When a batch script is started, it starts in the user's home directory.
+# Change to the directory where job was submitted.
+if [ ! -z $SLURM_SUBMIT_DIR ] ; then
+    cd $SLURM_SUBMIT_DIR 
+fi
+
+# Define locations of LIS, NUWRF, and the experiment work directory
+export LISDIR=/discover/nobackup/projects/lis
+export NUWRFDIR=/discover/nobackup/emkemp/NUWRF/svn/branches/features/v7_allinea
+export WORKDIR=/discover/nobackup/projects/nu-wrf/members/emkemp/cases_v8/R_3ICE_GRAUPEL.map
+export ALLINEA_LIBS=$NUWRFDIR/Allinea
+
+# Set environment variables needed by RIP
+export RIP_ROOT=$NUWRFDIR/RIP4
+export NCARG_ROOT=/usr/local/other/SLES11.1/ncarg/6.0.0/intel-13.0.1.117
+
+# Move to work directory and make sure namelist.input is present.
+if [ -z "$WORKDIR" ] ; then
+    echo "ERROR, WORKDIR is not defined!"
+fi
+cd $WORKDIR 
+if [ ! -e namelist.input ] ; then
+    echo "ERROR, namelist.input not found!"
+fi
+
+# Copy the various wrf lookup files into the work directory.
+if [ -z "$NUWRFDIR" ] ; then
+    echo "ERROR, NUWRFDIR is not defined!"
+fi
+cd $NUWRFDIR/WRFV3/run 
+for file in CAM_ABS_DATA CAM_AEROPT_DATA co2_trans ETAMPNEW_DATA \
+            ETAMPNEW_DATA_DBL ETAMPNEW_DATA.expanded_rain \
+            ETAMPNEW_DATA.expanded_rain_DBL GENPARM.TBL grib2map.tbl \
+            gribmap.txt LANDUSE.TBL MPTABLE.TBL ozone.formatted \
+            ozone_lat.formatted ozone_plev.formatted RRTM_DATA RRTM_DATA_DBL \
+            RRTMG_LW_DATA RRTMG_LW_DATA_DBL RRTMG_SW_DATA RRTMG_SW_DATA_DBL \
+            SOILPARM.TBL tr49t67 tr49t85 tr67t85 URBPARM.TBL URBPARM_UZE.TBL \
+            VEGPARM.TBL ; do
+
+    if [ ! -e $file ] ; then
+        echo "ERROR, $file does not exist!"
+    fi
+
+    ln -fs $NUWRFDIR/WRFV3/run/$file $WORKDIR/$file 
+    if [ ! -e $WORKDIR/$file ] ; then
+	echo "ERROR, $WORKDIR/$file does not exist!"
+    fi
+done
+
+# For running with 2014 Goddard radiation
+rm $WORKDIR/GODDARDRAD_SSLUT
+ln -fs $NUWRFDIR/WRFV3/GODDARDRAD_SSLUT $WORKDIR/GODDARDRAD_SSLUT 
+if [ ! -e $WORKDIR/GODDARDRAD_SSLUT ] ; then
+    echo "ERROR, $WORKDIR/GODDARDRAD_SSLUT does not exist!"
+fi
+
+# Link the wrf.exe executable
+ln -fs $NUWRFDIR/WRFV3/main/wrf.exe $WORKDIR/wrf.exe 
+if [ ! -e $WORKDIR/wrf.exe ] ; then
+    echo "ERROR, $WORKDIR/wrf.exe does not exist!"
+fi
+
+/usr/local/other/policeme/policeme.exe -r 1 -d $WORKDIR
+
+# Run wrf.exe
+cd $WORKDIR
+
+set -x
+
+AUTO_LAUNCH_TAG

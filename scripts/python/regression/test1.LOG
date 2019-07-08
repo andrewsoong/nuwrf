@@ -1,0 +1,12 @@
+DEBUG utils:57 get_config Done reading test1.cfg
+INFO utils:222 header USER CONFIGURATION:
+DEBUG utils:57 get_config Done reading comp.cfg
+INFO reg_tools:71 setup_testing_environment Setup testing environment...
+INFO reg_tools:190 create_test_dir_structure Create directories for each NU-WRF build...
+DEBUG reg_tools:201 create_test_dir_structure Create wrf build task using intel-sgimpt settings
+DEBUG reg_tools:210 create_test_dir_structure Creating symlink /discover/nobackup/ccruz/devel/nu-wrf/code/v9p3-wrf391-lis72 -> /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/builds/intel-sgimpt.2019-05-29_09-59-59/wrf
+DEBUG reg_tools:237 create_test_dir_structure Creating results dir /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/results/intel-sgimpt.2019-05-29_09-59-59/wrf_arw_post
+DEBUG reg_tools:237 create_test_dir_structure Creating results dir /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/results/intel-sgimpt.2019-05-29_09-59-59/wrf_arw_simple
+DEBUG reg_tools:439 create_run_script Creating run script for test: wrf_arw_post
+DEBUG reg_tools:439 create_run_script Creating run script for test: wrf_arw_simple
+INFO reg_tools:385 reg_runs Setup is DONE.

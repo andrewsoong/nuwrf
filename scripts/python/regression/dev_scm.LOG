@@ -1,0 +1,10 @@
+DEBUG utils:57 get_config Done reading dev_scm.cfg
+INFO utils:222 header USER CONFIGURATION:
+DEBUG utils:57 get_config Done reading comp.cfg
+INFO reg_tools:71 setup_testing_environment Setup testing environment...
+INFO reg_tools:190 create_test_dir_structure Create directories for each NU-WRF build...
+DEBUG reg_tools:201 create_test_dir_structure Create scm build task using intel-intelmpi settings
+DEBUG reg_tools:210 create_test_dir_structure Creating symlink /discover/nobackup/ccruz/devel/nu-wrf/code/nuwrf -> /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/builds/intel-intelmpi.2019-06-26_16-52-19/scm
+DEBUG reg_tools:237 create_test_dir_structure Creating results dir /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/results/intel-intelmpi.2019-06-26_16-52-19/wrflis_scm_noahmp
+DEBUG reg_tools:439 create_run_script Creating run script for test: wrflis_scm_noahmp
+INFO reg_tools:385 reg_runs Setup is DONE.

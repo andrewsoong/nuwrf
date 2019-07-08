@@ -1,0 +1,25 @@
+===============================================================================
+NASA Unified WRF (NU-WRF)
+23 May 2019
+===============================================================================
+-------------------------------------------------------------------------------
+Release Tag: v10-wrf391-lisf (23 May 2019) -- "Dalton"
+-------------------------------------------------------------------------------
+
+First official NU-WRF release on the NASA GitHub repository. This release
+is based on the v9p3-wrf391-lis72 software stack with additional modifications:
+
+  - LIS, LDT and LVT code versions are those from the LISF repository.
+  - The WRFV3 directory has been renamed to WRF.
+  - LISF, WPS and WRF are maintained as subtrees. This allows these components
+    to be maintained as NU-WRF dependencies.
+  - External libraries have also been re-built consistent with LISF builds.
+  - ARWpost, UPP, MET and RIP4 applications are no longer part of the software
+    stack and are not under version control. On Discover the application tarballs
+    are stored in the NU-WRF file system and retrieved, uncompressed and
+    installed at build time - if so requested. On non-DISCOVER systems users
+    will be prompted to provide a tarball and the build system will install it.
+  - Updated build system.
+  - Updated NU-WRF user guide.
+  - Updated tutorial documentation and testcases.
+

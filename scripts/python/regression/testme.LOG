@@ -1,0 +1,299 @@
+DEBUG utils:57 get_config Done reading testme.cfg
+INFO utils:222 header USER CONFIGURATION:
+DEBUG utils:57 get_config Done reading comp.cfg
+INFO reg_tools:71 setup_testing_environment Setup testing environment...
+INFO reg_tools:163 git_clone_repository Clone user-specified git repository...
+INFO reg_tools:190 create_test_dir_structure Create directories for each NU-WRF build...
+DEBUG reg_tools:201 create_test_dir_structure Create scm build task using intel-sgimpt settings
+DEBUG reg_tools:213 create_test_dir_structure Creating build dir /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/builds/intel-sgimpt.2019-05-28_23-17-33/scm
+DEBUG reg_tools:201 create_test_dir_structure Create wrf build task using intel-sgimpt settings
+DEBUG reg_tools:213 create_test_dir_structure Creating build dir /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/builds/intel-sgimpt.2019-05-28_23-17-33/wrf
+DEBUG reg_tools:201 create_test_dir_structure Create chem build task using intel-sgimpt settings
+DEBUG reg_tools:213 create_test_dir_structure Creating build dir /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/builds/intel-sgimpt.2019-05-28_23-17-33/chem
+DEBUG reg_tools:237 create_test_dir_structure Creating results dir /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/results/intel-sgimpt.2019-05-28_23-17-33/wrf_3iceg_2014rad
+DEBUG reg_tools:237 create_test_dir_structure Creating results dir /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/results/intel-sgimpt.2019-05-28_23-17-33/wrf_3iceg_2014rad_lake
+DEBUG reg_tools:237 create_test_dir_structure Creating results dir /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/results/intel-sgimpt.2019-05-28_23-17-33/wrf_4ice_2017rad
+DEBUG reg_tools:237 create_test_dir_structure Creating results dir /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/results/intel-sgimpt.2019-05-28_23-17-33/wrf_arw_katrina
+DEBUG reg_tools:237 create_test_dir_structure Creating results dir /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/results/intel-sgimpt.2019-05-28_23-17-33/wrf_arw_post
+DEBUG reg_tools:237 create_test_dir_structure Creating results dir /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/results/intel-sgimpt.2019-05-28_23-17-33/wrf_arw_rip
+DEBUG reg_tools:237 create_test_dir_structure Creating results dir /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/results/intel-sgimpt.2019-05-28_23-17-33/wrf_arw_simple
+DEBUG reg_tools:237 create_test_dir_structure Creating results dir /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/results/intel-sgimpt.2019-05-28_23-17-33/wrflis_nldas2_lis_spinup
+DEBUG reg_tools:237 create_test_dir_structure Creating results dir /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/results/intel-sgimpt.2019-05-28_23-17-33/wrflis_noah36_modis_gdas_lis_spinup
+DEBUG reg_tools:237 create_test_dir_structure Creating results dir /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/results/intel-sgimpt.2019-05-28_23-17-33/wrflis_noah36_modis_merra2_lis_spinup
+DEBUG reg_tools:237 create_test_dir_structure Creating results dir /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/results/intel-sgimpt.2019-05-28_23-17-33/wrflis_scm
+DEBUG reg_tools:237 create_test_dir_structure Creating results dir /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/results/intel-sgimpt.2019-05-28_23-17-33/chem_casaco2
+DEBUG reg_tools:237 create_test_dir_structure Creating results dir /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/results/intel-sgimpt.2019-05-28_23-17-33/chem_erod_dyn
+DEBUG reg_tools:237 create_test_dir_structure Creating results dir /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/results/intel-sgimpt.2019-05-28_23-17-33/chem_gfed4_gocart
+DEBUG reg_tools:237 create_test_dir_structure Creating results dir /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/results/intel-sgimpt.2019-05-28_23-17-33/chem_qfed_gocart
+DEBUG reg_tools:340 create_build_script Creating build script in: /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/builds/intel-sgimpt.2019-05-28_23-17-33/scm
+DEBUG reg_tools:353 create_build_script scm build components: lis,ideal_scm_lis_xy,wps,ldt,lis4scm
+DEBUG reg_tools:340 create_build_script Creating build script in: /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/builds/intel-sgimpt.2019-05-28_23-17-33/wrf
+DEBUG reg_tools:353 create_build_script wrf build components: lis,wrf,wps,ldt,geos2wrf,sst2wrf,lisWrfDomain
+DEBUG reg_tools:340 create_build_script Creating build script in: /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/builds/intel-sgimpt.2019-05-28_23-17-33/chem
+DEBUG reg_tools:353 create_build_script chem build components: lis,chem,wps,ldt,utils
+INFO reg_tools:251 reg_builds Compiling...
+DEBUG RegPool:104 run_commands Creating 3 workers
+DEBUG RegPool:26 run Worker-1: cd /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/builds/intel-sgimpt.2019-05-28_23-17-33/scm;sbatch scm.bash
+DEBUG RegPool:26 run Worker-2: cd /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/builds/intel-sgimpt.2019-05-28_23-17-33/wrf;sbatch wrf.bash
+DEBUG RegPool:26 run Worker-3: cd /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/builds/intel-sgimpt.2019-05-28_23-17-33/chem;sbatch chem.bash
+DEBUG RegPool:85 slurm_command Submitted batch job 32343024
+
+DEBUG RegPool:85 slurm_command Submitted batch job 32343025
+
+DEBUG RegPool:69 __call__ ...32343023 is pending
+DEBUG RegPool:69 __call__ ...32343024 is pending
+DEBUG RegPool:69 __call__ ...32343025 is pending
+DEBUG RegPool:69 __call__ ...32343023 is pending
+DEBUG RegPool:69 __call__ ...32343024 is pending
+DEBUG RegPool:69 __call__ ...32343025 is pending
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343023 is running
+DEBUG RegPool:71 __call__ ...32343024 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:65 __call__ ...32343023 is done
+DEBUG RegPool:65 __call__ ...32343024 is done
+DEBUG RegPool:23 run Worker-2: Exiting
+DEBUG RegPool:23 run Worker-1: Exiting
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:71 __call__ ...32343025 is running
+DEBUG RegPool:65 __call__ ...32343025 is done
+DEBUG RegPool:23 run Worker-3: Exiting
+INFO reg_tools:299 reg_builds Build scm FAILED.
+INFO reg_tools:299 reg_builds Build wrf FAILED.
+INFO reg_tools:299 reg_builds Build chem FAILED.

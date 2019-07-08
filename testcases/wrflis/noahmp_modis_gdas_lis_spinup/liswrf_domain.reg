@@ -1,0 +1,32 @@
+#############################
+# BEGIN LISWRF_DOMAIN SEGMENT
+#############################
+THIS=LISWRF_DOMAIN
+
+cd $RUNDIR || exit 1
+
+ln -fs $EXEDIR/utils/bin/lisWrfDomain.x  || exit 1
+if [ ! -e lisWrfDomain.x ] ; then 
+    echo "$THIS ERROR: lisWrfDomain.x does not exist!"
+    exit 1
+fi
+ln -fs $EXEDIR/utils/lisWrfDomain/scripts/lisWrfDomain.py || exit 1
+if [ ! -e lisWrfDomain.py ] ; then 
+    echo "$THIS ERROR: lisWrfDomain.py does not exist!"
+    exit 1
+fi
+./lisWrfDomain.py  ./lisWrfDomain.x lis.config.coldstart ldt.config.prelis  ./
+if [ -e lis.config.coldstart.new ]; then
+   mv lis.config.coldstart.new lis.config.coldstart
+fi
+if [ -e ldt.config.prelis.new ]; then
+   mv ldt.config.prelis.new ldt.config.prelis
+fi
+./lisWrfDomain.py  ./lisWrfDomain.x lis.config.wrf ldt.config.postlis  ./
+if [ -e lis.config.wrf.new ]; then
+   mv lis.config.wrf.new lis.config.wrf
+fi
+if [ -e ldt.config.postlis.new ]; then
+   mv ldt.config.postlis.new ldt.config.postlis
+fi
+

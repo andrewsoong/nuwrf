@@ -1,0 +1,13 @@
+#############################
+# BEGIN LIS SEGMENT
+#############################
+THIS=LIS
+
+cd $RUNDIR || exit 1
+
+# We do not run LIS. Use stored data files:
+LIS_DATA=(`ls $DATADIR/LIS*`)
+for file in "${LIS_DATA[@]}"; do
+    cp ${file} .
+done
+

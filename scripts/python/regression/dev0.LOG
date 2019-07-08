@@ -1,0 +1,26 @@
+DEBUG utils:57 get_config Done reading dev0.cfg
+INFO utils:222 header USER CONFIGURATION:
+DEBUG utils:57 get_config Done reading comp.cfg
+INFO reg_tools:71 setup_testing_environment Setup testing environment...
+DEBUG utils:79 clean_scratch Clean up testing environment...
+DEBUG utils:121 clean_dir Will clean up /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/results
+DEBUG utils:121 clean_dir Will clean up /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/results
+DEBUG utils:121 clean_dir Will clean up /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/results
+DEBUG utils:121 clean_dir Will clean up /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/builds
+DEBUG utils:121 clean_dir Will clean up /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/builds
+INFO reg_tools:190 create_test_dir_structure Create directories for each NU-WRF build...
+DEBUG reg_tools:201 create_test_dir_structure Create wrf build task using intel-intelmpi settings
+DEBUG reg_tools:210 create_test_dir_structure Creating symlink /discover/nobackup/ccruz/devel/nu-wrf/code/nuwrf -> /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/builds/intel-intelmpi.2019-06-07_13-14-39/wrf
+DEBUG reg_tools:237 create_test_dir_structure Creating results dir /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/results/intel-intelmpi.2019-06-07_13-14-39/wrflis_nldas2_lis_spinup
+DEBUG reg_tools:439 create_run_script Creating run script for test: wrflis_nldas2_lis_spinup
+INFO reg_tools:391 reg_runs Running test cases...
+DEBUG RegPool:104 run_commands Creating 1 workers
+DEBUG RegPool:26 run Worker-1: sbatch /discover/nobackup/projects/nu-wrf/regression_testing/gitrepo/results/intel-intelmpi.2019-06-07_13-14-39/wrflis_nldas2_lis_spinup/wrflis_nldas2_lis_spinup.bash
+DEBUG RegPool:85 slurm_command Submitted batch job 32569229
+
+DEBUG RegPool:69 __call__ ...32569229 is pending
+DEBUG RegPool:71 __call__ ...32569229 is running
+DEBUG RegPool:65 __call__ ...32569229 is done
+DEBUG RegPool:23 run Worker-1: Exiting
+INFO reg:85 main Time taken = 66.839462
+INFO reg:86 main ./reg is done.

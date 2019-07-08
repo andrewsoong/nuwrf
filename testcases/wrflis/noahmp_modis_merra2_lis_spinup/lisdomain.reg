@@ -1,0 +1,17 @@
+#############################
+# BEGIN MERRA2WRF SEGMENT
+#############################
+
+cd $RUNDIR || exit 1
+
+ln -sf $EXEDIR/utils/bin/lisWrfDomain.x  || exit 1
+ln -sf $NUWRFDIR/utils/lisWrfDomain/scripts/lisWrfDomain.py  || exit 1
+
+./lisWrfDomain.py ./lisWrfDomain.x lis.config.coldstart ldt.config.prelis .
+./lisWrfDomain.py ./lisWrfDomain.x lis.config.coldstart ldt.config.postlis .
+./lisWrfDomain.py ./lisWrfDomain.x lis.config.wrf ldt.config.postlis .
+
+diff -wc ldt.config.prelis.new ldt.config.prelis
+diff -wc ldt.config.postlis.new ldt.config.postlis
+diff -wc lis.config.coldstart.new lis.config.coldstart
+diff -wc lis.config.wrf.new lis.config.wrf
